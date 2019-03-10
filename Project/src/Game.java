@@ -1,5 +1,4 @@
-
-
+//Import Statements
 import org.lwjgl.opengl.Display;
 
 public class Game {
