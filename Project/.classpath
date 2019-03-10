@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/schul/Desktop/Workspace/lib/natives"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Users/IshanVyas/Desktop/University/Courses/Winter 2019/CPSC 233/Project/Workspace/lib/natives"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/IshanVyas/Desktop/University/Courses/Winter 2019/CPSC 233/Project/Workspace/lib/jars/slick-util.jar"/>

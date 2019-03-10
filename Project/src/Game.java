@@ -3,7 +3,7 @@ import org.lwjgl.opengl.Display;
 
 public class Game {
 
-// Chris was here
+// Ishan was here
 // main constructor	
     public Game(){
     	
