@@ -3,7 +3,7 @@ import org.lwjgl.opengl.Display;
 
 public class Game {
 	
-	// main constructor	
+// main constructor	
     public Game(){
     	
     	Graphics.BeginSession();
