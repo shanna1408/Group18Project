@@ -2,7 +2,8 @@
 import org.lwjgl.opengl.Display;
 
 public class Game {
-	
+
+// Check
 // main constructor	
     public Game(){
     	
