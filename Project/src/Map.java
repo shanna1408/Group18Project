@@ -24,6 +24,9 @@ public class Map {
 				case 1:
 					grid[i][j] = new Tile(i*64, j*64, 64, 64, TileType.Path);
 					break;
+				case 2:
+					grid[i][j] = new Tile(i*64, j*64, 64, 64, TileType.Ice);
+					break;
 				}
 			}
 		}
