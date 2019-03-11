@@ -49,10 +49,13 @@ public class Player {
         	Update();
         }*/
 		
-		if(Mouse.isButtonDown(0) && !leftClick && grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64).getType() == TileType.Snow)
+		if(Mouse.getX() < 1280)
 		{
-			towerList.add(new ScienceTower(Graphics.QuickLoad("sTower"), grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64), 10));
-		}
+			if(Mouse.isButtonDown(0) && !leftClick && grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64).getType() == TileType.Snow)
+			{
+				towerList.add(new ScienceTower(Graphics.QuickLoad("sTower"), grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64), 10));
+			}
+		}	
 		leftClick = Mouse.isButtonDown(0);
     }
     
