@@ -68,7 +68,7 @@ public class Tile {
 		this.type = type;
 	}
 	
-	/*
+	
 	public int getXPlace() {
 		return (int) x/64;
 	}
@@ -76,6 +76,6 @@ public class Tile {
 	public int getYPlace() {
 		return (int) y/64;
 	}
-	*/
+	
 	
 }
