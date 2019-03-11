@@ -24,6 +24,10 @@ public class MainMenu {
 			{
 				StateManager.setState(StateManager.GameState.GAME);
 			}
+			if(menuUI.isButtonClicked("Quit"))
+			{
+				System.exit(0);
+			}
 		}
 	}
 	
