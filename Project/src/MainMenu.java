@@ -12,8 +12,8 @@ public class MainMenu {
 		background = Graphics.QuickLoad("mainmenu");
 		menuUI = new UI();
 		menuUI.addButton("Play", "playButton", Graphics.WIDTH / 2 -128, (int) (Graphics.HEIGHT * 0.45f));
-		menuUI.addButton("Editor", "editorButton", Graphics.WIDTH / 2 -128, (int) (Graphics.HEIGHT * 0.55f));
-		menuUI.addButton("Quit", "quitButton", Graphics.WIDTH / 2 -128, (int) (Graphics.HEIGHT * 0.65f));
+		//menuUI.addButton("Editor", "editorButton", Graphics.WIDTH / 2 -128, (int) (Graphics.HEIGHT * 0.55f));
+		menuUI.addButton("Quit", "quitButton", Graphics.WIDTH / 2 -128, (int) (Graphics.HEIGHT * 0.55f));
 	}
 	
 	private void updateButtons()
