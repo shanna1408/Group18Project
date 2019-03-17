@@ -1,3 +1,4 @@
+import org.lwjgl.input.Mouse;
 
 public class Game {
 
@@ -21,7 +22,27 @@ public class Game {
 	private void setupUI()
 	{
 		pickTower = new UI();
-		pickTower.addButton("ScienceTowe", "sTower", 1344, 128);
+		//pickTower.addButton("SchulichTower", "sTower", 0, 0);
+		pickTower.createMenu("TowerPicker", 0, 0, 2, 0);
+		pickTower.getMenu("TowerPicker").addButton(new Button("ScienceTower", Graphics.QuickLoad("sTower"), 0, 0));
+	}
+	
+	private void updateUI()
+	{
+		pickTower.draw();
+		
+		if(Mouse.next())
+		{
+			boolean mouseClicked = Mouse.isButtonDown(0);
+			if(mouseClicked)
+			{	
+				if(pickTower.getMenu("TowerPicker").isButtonClicked("ScienceTower"))
+				{
+					player.pickTower(new ScienceTower(TowerType.sTower, grid.GetTile(0, 0)));
+				}
+			}	
+		}	
+		
 	}
 	
 	public void update()
@@ -31,7 +52,7 @@ public class Game {
 		player.Update();
 		Time.Update();
 		wave.Update();
-		pickTower.draw();
+		updateUI();
 		//tower.draw();
 		
 	}

@@ -6,14 +6,17 @@ import org.lwjgl.input.Mouse;
 public class Player {
 	
 	private Map grid;
-	private boolean leftClick;
-	private ArrayList<ScienceTower> towerList;
+	private boolean leftClick, holdingTower;
+	private ArrayList<Tower> towerList;
+	private Tower tTower;
 	
 	
 	public Player(Map grid) {
 		this.grid = grid;
 		this.leftClick = false;
-		this.towerList = new ArrayList<ScienceTower>();
+		this.towerList = new ArrayList<Tower>();
+		this.holdingTower = false;
+		this.tTower = null;
 		
 	}
 	
@@ -34,9 +37,18 @@ public class Player {
 	
 	public void Update()
     {
-		for (ScienceTower t : towerList)
+		//Update Holding Tower
+		if(holdingTower)
+		{
+			tTower.setX(getMouseTile().getX());
+			tTower.setY(getMouseTile().getY());
+			tTower.draw();
+		}
+		
+		for (Tower t : towerList)
 		{
 			t.update();
+			t.draw();
 		}
 		/*
         System.out.print("Where do you want to build a tower? (Input x value, then y value.)");
@@ -49,14 +61,34 @@ public class Player {
         	Update();
         }*/
 		
-		if(Mouse.getX() < 1280)
+
+		if(Mouse.isButtonDown(0) && !leftClick)
 		{
-			if(Mouse.isButtonDown(0) && !leftClick && grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64).getType() == TileType.Snow)
-			{
-				towerList.add(new ScienceTower(Graphics.QuickLoad("sTower"), grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64), 10));
-			}
-		}	
+			placeTower();
+		}
+	
 		leftClick = Mouse.isButtonDown(0);
     }
+	
+	private void placeTower()
+	{
+		if(holdingTower)
+		{
+			towerList.add(tTower);
+		}
+		holdingTower = false;
+		tTower = null;
+	}
+	
+	public void pickTower(Tower t)
+	{
+		tTower = t;
+		holdingTower = true;
+	}
+	
+	private Tile getMouseTile()
+	{
+		return grid.GetTile(Mouse.getX() / 64, (Graphics.HEIGHT - Mouse.getY() -1) / 64);
+	}
     
 }
