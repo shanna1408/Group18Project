@@ -19,6 +19,7 @@ public class Game {
 		//tower = new ScienceTower(Graphics.QuickLoad("cannonBase"), grid.GetTile(3, 3), 10);
 	}
 	
+	//Change
 	private void setupUI()
 	{
 		pickTower = new UI();
